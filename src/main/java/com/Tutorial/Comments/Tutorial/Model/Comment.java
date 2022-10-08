@@ -29,4 +29,15 @@ public class Comment {
     @OnDelete   (action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Tutorial tutorial;
+    
+    // methods /////////////////////////////////////////////////////////////////////////////////
+    public Comment(){}
+    public Comment(Tutorial tutorial, String content) {
+        this.tutorial = tutorial;
+        this.content  = content;
+    }
+    
+    public void setTutorial(Tutorial tutorial) { this.tutorial = tutorial;}
+    public void setContent(String content)     { this.content = content;}
+    public String getContent() { return content;}
 }
