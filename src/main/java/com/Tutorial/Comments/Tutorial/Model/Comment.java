@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "comments")
 public class Comment {
+    // members /////////////////////////////////////////////////////////////////////////////////
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_generator")
     private long id;
@@ -23,9 +24,9 @@ public class Comment {
     @Lob
     private String content;
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "tutorial_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne  (fetch = FetchType.LAZY, optional = false)
+    @JoinColumn (name = "tutorial_id", nullable = false)
+    @OnDelete   (action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Tutorial tutorial;
 }
